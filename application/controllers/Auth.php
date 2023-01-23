@@ -71,15 +71,18 @@ class Auth extends CI_Controller {
 		}
 	}
 	public function logout(){
-		$this->session->unset_userdata('id');
-		$this->session->unset_userdata('login');
-		$this->session->unset_userdata('fullname');
-		$this->session->unset_userdata('password');
-		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('foto');
-		$this->session->unset_userdata('id_siswa');
-		$this->session->unset_userdata('id_kelas');
-		$this->session->unset_userdata('nama_siswa');
+
+
+		$this->session->sess_destroy();
+		// $this->session->unset_userdata('id');
+		// $this->session->unset_userdata('login');
+		// $this->session->unset_userdata('fullname');
+		// $this->session->unset_userdata('password');
+		// $this->session->unset_userdata('username');
+		// $this->session->unset_userdata('foto');
+		// $this->session->unset_userdata('id_siswa');
+		// $this->session->unset_userdata('id_kelas');
+		// $this->session->unset_userdata('nama_siswa');
 		$this->session->set_flashdata('message', '<div class="alert alert-info"><i class="fa fa-check-square"></i> Terimakasih.. Logout Berhasil </div>');
 		redirect('auth');
 	}
